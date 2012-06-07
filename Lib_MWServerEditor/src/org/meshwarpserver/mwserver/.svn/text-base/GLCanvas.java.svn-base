@@ -1,0 +1,8 @@
+package ch.maybites.mxj.opengl.meshwarp;
+import com.cycling74.max.*;
+
+public interface GLCanvas {
+	
+	public void drawGlCommand(Atom[] command, int outletnumber);
+
+}

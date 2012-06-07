@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 	<project name="Library_ExpressionParser" default="default" basedir=".">
+		<description>
+ 		======================================================================================
+			Processing.org -> Eclipse Ant Builder for Applets and Application			
+ 		======================================================================================
+ 		</description>
+ 	    <property name="workspace.location" value="/Users/maybites/Arbeiten/02_code/eclipse/default"/>
+     	<property name="processing.dir" value="/Applications/Processing"/>
+        <property name="project.name" value="Prj_MeshWarpServer"/>
+ 		<property name="main.class.name" value="MeshWarpEditor"/>
+ 		<property name="jar.name" value="MWServerSE.jar"/>
+ 		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/mayBites/110221_MeshWarpServer/01_development/source/lib/java/lib"/>
+ 
+ 		
+
+<!--
+==================================================================
+	DO NOT CHANGE BELOW UNLESS YOU KNOW WHAT YOU ARE DOIN
+==================================================================-->		
+ 	   	<property name="project.bin.dir" value="bin"/>
+ 	   	<property name="project.src.dir" value="src"/>
+ 	   	<property name="project.build.dir" value="build"/>
+     	 		
+		<target name ="default" description="check conditions">
+		 	<delete dir="${project.build.dir}"/> 			
+			<mkdir dir="${project.build.dir}"/>
+			<antcall target="jar.build"/>
+			<copy file="${project.build.dir}/${jar.name}" todir="${export.dir}"/>
+ 		</target>
+ 		
+		
+ 		<target name="jar.build">
+ 			<jar jarfile="${project.build.dir}/${jar.name}">
+		        <fileset dir="${project.build.dir}"/>
+		        <fileset dir="${project.bin.dir}">
+		        	<include name="**/*.class"/>
+		        </fileset>
+			    <manifest>
+      				<attribute name="Built-By" value="${user.name}"/>
+      				<attribute name="Main-Class" value="${main.class.name}"/>
+    			</manifest>
+			</jar>	
+  		</target>
+
+ 	</project>

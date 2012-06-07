@@ -1,0 +1,102 @@
+package org.meshwarpserver.mwserver;
+
+import java.io.*;
+import java.util.ArrayList;
+
+import org.meshwarpserver.objloader.*;
+
+public class UnDoFileManager {
+	
+	private ArrayList<OBJModel> undoList;
+	
+	private int currentIndex;
+	private int autoSaveCounter, autoSaveIndex, autoSaveSteps;
+	public String originalFileName;
+	private int undoSteps;
+	
+	public UnDoFileManager(int autosave){
+		currentIndex = 0;
+		undoList = new ArrayList<OBJModel>();
+		autoSaveSteps = autosave;
+		undoSteps = 30;
+	}
+	
+	public void saveAs(OBJModel model, String filename){
+		removeAutosaveFiles();
+		originalFileName = filename;
+		model.saveAs(filename);
+	}
+	
+	public void load(OBJModel model, String filename){
+		removeAutosaveFiles();
+		currentIndex = 0;
+		autoSaveCounter = 0;
+		autoSaveIndex = 0;
+		originalFileName = filename;
+		model.load(filename);
+		undoList.add(currentIndex, model.clone());
+	}
+	
+	public void save(OBJModel model){
+		if(model.saveAs(originalFileName))
+			removeAutosaveFiles();
+	}
+	
+	public OBJModel unDo(OBJModel model){
+		if(currentIndex > 0){
+			currentIndex--;
+			return undoList.get(currentIndex).clone();
+		}
+		return model;
+	}
+
+	public OBJModel reDo(OBJModel model){
+		if(currentIndex < (undoList.size() - 1)){
+			currentIndex++;
+			return undoList.get(currentIndex).clone();
+		}
+		return model;
+	}
+
+	/*
+	 * the object has been altered and a undo step has to be saved.
+	 */
+	public void newDo(OBJModel model){
+		// remove all the old history
+		for(int i = currentIndex + 1; i < undoList.size();){
+			undoList.remove(i);
+		}
+		undoList.add(model.clone());
+		if(currentIndex < undoSteps){
+			currentIndex++;
+		}else{
+			//System.out.println("removing undo step from list with size: "+undoList.size());
+			undoList.remove(0);
+			//System.out.println("new size: "+undoList.size());
+		}
+		if(autoSaveCounter++ >= autoSaveSteps){
+			model.saveAs(autosaveFilename(autoSaveIndex++));
+			autoSaveCounter = 0;
+		}
+	}
+	
+	private String autosaveFilename(int index){
+		return originalFileName + "_autosave_" + index;
+	}
+	
+	private void removeAutosaveFiles(){
+		int start = 0;
+		boolean hasMoreFiles = true;
+		File deleteFile;
+		while(hasMoreFiles){
+			deleteFile = new File(autosaveFilename(start++));
+			if(deleteFile.exists()){
+				deleteFile.delete();
+			}else{
+				hasMoreFiles = false;
+			}
+		}
+		autoSaveIndex = 0;
+		autoSaveCounter = 0;
+	}
+}
