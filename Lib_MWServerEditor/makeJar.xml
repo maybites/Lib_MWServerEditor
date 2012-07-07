@@ -7,10 +7,10 @@
  		</description>
  	    <property name="workspace.location" value="/Users/maybites/Arbeiten/02_code/eclipse/default"/>
      	<property name="processing.dir" value="/Applications/Processing"/>
-        <property name="project.name" value="Prj_MeshWarpServer"/>
+        <property name="project.name" value="Lib_MWServerEditor"/>
  		<property name="main.class.name" value="MeshWarpEditor"/>
  		<property name="jar.name" value="MWServerSE.jar"/>
- 		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/mayBites/110221_MeshWarpServer/01_development/source/lib/java/lib"/>
+ 		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/mayBites/110221_MeshWarpServer/01_dev/source/lib/java/lib"/>
  
  		
 

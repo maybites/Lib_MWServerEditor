@@ -56,7 +56,7 @@ public class MeshWarpEditor extends MaxObject implements GLCanvas{
 		textureSketchVertices = new SketchCanvas(this, textureSketch_vertices_Outlet);
 		handler2DSketch = new SketchCanvas(this, handle2DSketchOutlet);
 
-		post("MeshWarpServerEditor Build 024");
+		post("MeshWarpServerEditor Build 060");
 		
 	}
 
@@ -490,7 +490,7 @@ public class MeshWarpEditor extends MaxObject implements GLCanvas{
 	}
 
 	public void saveas(String s) {
-		if(s.indexOf("/") > 0){
+		if(s.indexOf("/") >= 0){
 			String path = s.substring(s.indexOf("/"));
 			post("saving obj to: " + path);
 			sw.saveAs(path);
