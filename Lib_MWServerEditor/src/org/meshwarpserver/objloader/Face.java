@@ -47,6 +47,8 @@ public class Face implements Constants, Comparable {
 	
 	protected FaceSubDivision _mySubFaces;
 	
+	protected int _subdivisionLevel; // 0 would be the smallest subface
+	
 	private float textureShiftX = -0.5f;
 	private float textureShiftY = -0.5f;
 
@@ -70,6 +72,7 @@ public class Face implements Constants, Comparable {
 	}
 
 	public void makeSubFaces(int subDivision){
+		_subdivisionLevel = subDivision;
 		if(subDivision > 0){
 			_mySubFaces = new FaceSubDivision(this, subDivision);
 		}else{
@@ -177,17 +180,16 @@ public class Face implements Constants, Comparable {
 	 */
 	public void refreshSketchCommands(){
 		sketchTexFaceCommands.clear();
-		createTexFaceCommands();
-		
 		sketchTexLineCommands.clear();
-		createTexLineCommands();
-
 		sketchLineCommands.clear();
-		createLineCommands();
-		
 		_sketchFaceCommands.clear();				
+
+		createTexFaceCommands();
+
 		if(_mySubFaces == null){
 			createFaceCommands();
+			createLineCommands();
+			createTexLineCommands();
 		} else {
 			_mySubFaces.refreshSketchCommands();
 		}

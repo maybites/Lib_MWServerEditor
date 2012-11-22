@@ -56,7 +56,7 @@ public class MeshWarpEditor extends MaxObject implements GLCanvas{
 		textureSketchVertices = new SketchCanvas(this, textureSketch_vertices_Outlet);
 		handler2DSketch = new SketchCanvas(this, handle2DSketchOutlet);
 
-		post("MeshWarpServerEditor Build 061");
+		post("MeshWarpServerEditor Build 062");
 		
 	}
 
