@@ -10,9 +10,8 @@
         <property name="project.name" value="Lib_MWServerEditor"/>
  		<property name="main.class.name" value="MeshWarpEditor"/>
  		<property name="jar.name" value="MWServerSE.jar"/>
- 		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/mayBites/110221_MeshWarpServer/01_dev/source/lib/java/lib"/>
+ 		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/110221_MWServer/01_dev/source/lib/java/lib"/>
  
- 		
 
 <!--
 ==================================================================
