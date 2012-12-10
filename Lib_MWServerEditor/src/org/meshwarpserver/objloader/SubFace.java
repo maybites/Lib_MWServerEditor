@@ -2,10 +2,11 @@ package org.meshwarpserver.objloader;
 
 import java.util.ArrayList;
 
+import org.meshwarpserver.util.GLCommands;
+import org.meshwarpserver.util.PVector;
+
 import com.cycling74.max.Atom;
 
-import ch.maybites.mxj.math.PVector;
-import ch.maybites.mxj.opengl.GLCommands;
 
 public class SubFace extends Face {
 	

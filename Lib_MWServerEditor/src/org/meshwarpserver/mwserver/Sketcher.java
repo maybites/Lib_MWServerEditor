@@ -1,11 +1,10 @@
 package org.meshwarpserver.mwserver;
 
-import ch.maybites.mxj.math.*;
-import ch.maybites.mxj.opengl.*;
 import com.cycling74.max.*;
 import java.util.ArrayList;
 
 import org.meshwarpserver.objloader.*;
+import org.meshwarpserver.util.*;
 
 public class Sketcher implements SketcherCommands {
 

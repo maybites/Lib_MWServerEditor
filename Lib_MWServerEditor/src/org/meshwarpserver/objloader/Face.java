@@ -12,8 +12,8 @@ package org.meshwarpserver.objloader;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-import ch.maybites.mxj.math.*;
-import ch.maybites.mxj.opengl.GLCommands;
+import org.meshwarpserver.util.GLCommands;
+import org.meshwarpserver.util.PVector;
 
 import com.cycling74.max.*;
 

@@ -6,8 +6,7 @@ package org.meshwarpserver.objloader;
  * Created on 2005/04/17
  */
 
-import ch.maybites.mxj.math.*;
-import ch.maybites.mxj.opengl.GLCommands;
+import ch.maybites.tools.Utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -23,6 +22,9 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipInputStream;
+
+import org.meshwarpserver.util.GLCommands;
+import org.meshwarpserver.util.PVector;
 
 /**
  * 

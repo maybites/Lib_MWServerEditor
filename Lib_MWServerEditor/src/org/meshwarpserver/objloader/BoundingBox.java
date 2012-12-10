@@ -1,6 +1,6 @@
 package org.meshwarpserver.objloader;
 
-import ch.maybites.mxj.math.*;
+import org.meshwarpserver.util.PVector;
 
 public class BoundingBox implements Constants {
 	

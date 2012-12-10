@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.nio.*;
 
-import ch.maybites.mxj.math.*;
+import org.meshwarpserver.util.PVector;
 
 public class Segment {
 	public ArrayList<Face> faces;

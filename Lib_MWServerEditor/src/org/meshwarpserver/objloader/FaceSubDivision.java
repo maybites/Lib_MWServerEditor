@@ -2,9 +2,9 @@ package org.meshwarpserver.objloader;
 
 import java.util.ArrayList;
 
-import com.cycling74.max.Atom;
+import org.meshwarpserver.util.PVector;
 
-import ch.maybites.mxj.math.*;
+import com.cycling74.max.Atom;
 
 public class FaceSubDivision {
 
