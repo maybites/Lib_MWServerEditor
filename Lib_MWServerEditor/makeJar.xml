@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 	<project name="Library_ExpressionParser" default="default" basedir=".">
+ 	<project name="Lib_MWServerEditor" default="default" basedir=".">
 		<description>
  		======================================================================================
 			Processing.org -> Eclipse Ant Builder for Applets and Application			
  		======================================================================================
  		</description>
- 	    <property name="workspace.location" value="/Users/maybites/Arbeiten/02_code/eclipse/default"/>
+ 	    <property name="workspace.location" value="/Users/maybites/Arbeiten/02_code/eclipse/git/"/>
      	<property name="processing.dir" value="/Applications/Processing"/>
         <property name="project.name" value="Lib_MWServerEditor"/>
  		<property name="main.class.name" value="MeshWarpEditor"/>
  		<property name="jar.name" value="MWServerSE.jar"/>
  		<property name="export.dir" value="/Users/maybites/Arbeiten/01_projekte/110221_MWServer/01_dev/source/lib/java/lib"/>
- 
 
+ 		
 <!--
 ==================================================================
 	DO NOT CHANGE BELOW UNLESS YOU KNOW WHAT YOU ARE DOIN
@@ -26,6 +26,7 @@
 			<mkdir dir="${project.build.dir}"/>
 			<antcall target="jar.build"/>
 			<copy file="${project.build.dir}/${jar.name}" todir="${export.dir}"/>
+		 	<delete dir="${project.build.dir}"/> 			
  		</target>
  		
 		
