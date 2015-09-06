@@ -113,7 +113,7 @@ public class Face implements Constants, Comparable {
 	
 	protected void createTexFaceCommands(){
 		if (getUVCount() > 0) {
-			sketchTexFaceCommands.add(GLCommands.sketch_beginShape());
+			sketchTexFaceCommands.add(GLCommands.sketch_beginPolygonShape());
 			for(int fp = 0; fp < getUVCount(); fp++){
 				PVector texture = getUvs(fp);
 				if(texture != null){
@@ -155,7 +155,7 @@ public class Face implements Constants, Comparable {
 
 	protected void createFaceCommands(){
 		if (getVertexCount() > 0) {
-			_sketchFaceCommands.add(GLCommands.sketch_beginShape()); // specify render mode
+			_sketchFaceCommands.add(GLCommands.sketch_beginPolygonShape()); // specify render mode
 			for(int fp = 0; fp < getVertexCount(); fp++){
 				PVector texture = getUvs(fp);
 				if(texture != null){

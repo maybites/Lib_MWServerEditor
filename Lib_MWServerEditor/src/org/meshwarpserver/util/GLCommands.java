@@ -31,8 +31,12 @@ public class GLCommands {
 		return new Atom[]{Atom.newAtom("point_size"), Atom.newAtom(size)};
 	}
 
-	public static Atom[] sketch_beginShape(){
+	public static Atom[] sketch_beginPolygonShape(){
 		return new Atom[]{Atom.newAtom("glbegin"), Atom.newAtom("polygon")};
+	}
+	
+	public static Atom[] sketch_beginTriangleShape(){
+		return new Atom[]{Atom.newAtom("glbegin"), Atom.newAtom("triangle")};
 	}
 
 	public static Atom[] sketch_vertex(float x, float y, float z){

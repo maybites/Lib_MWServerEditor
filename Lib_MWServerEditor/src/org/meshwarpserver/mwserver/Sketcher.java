@@ -1228,7 +1228,7 @@ public class Sketcher implements SketcherCommands {
 		**/
 
 		command(GLCommands.sketch_glcolor(bkgFaceColor));
-		command(GLCommands.sketch_beginShape());
+		command(GLCommands.sketch_beginPolygonShape());
 		command(GLCommands.sketch_texture(0, 0));
 		command(GLCommands.sketch_vertex(0+textureShiftX, 0+textureShiftY, 0));
 		command(GLCommands.sketch_texture(1, 0));
